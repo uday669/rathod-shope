@@ -1,9 +1,9 @@
-import React from 'react'
+import Mainlayout from './Layout/Mainlayout'
 
 export default function App() {
   return (
     <div>
-      hello react-store
+      <Mainlayout/>
     </div>
   )
 }

@@ -1,36 +1,34 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import React, { useState } from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Hader() {
+
+  const [navopen , setNavopen] = useState()
+
   return (
     <>
-       <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar> 
+      <Navbar expand="lg" className="bg-body-tertiary  header-s1">
+        <Container>
+          <Navbar.Brand className="text-white">R-shoping</Navbar.Brand>
+          <Navbar.Collapse style={{ left: navopen ? "0" : "" }}>
+            <Nav className="mx-auto">
+              <Nav.Link >Home</Nav.Link>
+              <Nav.Link >Link</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+              <div className="d-lg-flex align-items-center gap-2 d-none">
+                <button className="btn btn-1 btn-outborder-007fff">Singn In</button>
+              </div>
+              <button className="d-lg-none btn border-0" onClick={() =>setNavopen(true)}>
+            <FontAwesomeIcon icon={faBars} size="lg" className="ru-text-FFFFFF"/>
+          </button>
+         {navopen && <div className="overplay" onClick={() => setNavopen(false)}></div>} 
+        </Container>
+      </Navbar>
     </>
-  )
+  );
 }

@@ -1,0 +1,35 @@
+@media (max-width: 991px) {
+
+    /* header css  */
+
+    .header-s1 .nav-link{
+    color: var(--ru-text-007fff);
+        transition: 0.5s;
+        border-radius: 8px;
+
+    }
+     .header-s1 .nav-link:hover{
+        background-color: var(--ru-bg-007fff);
+        color: white;
+        transition: 0.5s;
+        padding: 8px 12px ;
+     }
+.header-s1 .collapse:not(.show){
+    display: block;
+    position: fixed;
+    height: 100%;
+    max-width: 320px;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    background-color: #ffffff;
+    z-index: 99999;
+        transition: 0.5s;
+
+}
+
+.header-s1 .navbar-nav{
+    padding: 15px;
+}
+/* Cutom css  */
+}

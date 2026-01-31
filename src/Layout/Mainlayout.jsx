@@ -1,12 +1,14 @@
-import React from 'react'
-import Hader from './Hader'
+import React from "react";
+import Hader from "./Hader";
+import { Outlet } from "react-router-dom";
 
 export default function Mainlayout() {
   return (
     <>
-     <main>
-        <Hader/>
-        </main> 
+      <main>
+        <Hader />
+        <Outlet />
+      </main>
     </>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import Mainlayout from './Layout/Mainlayout'
+import AuthRoute from './Routeshope/AuthRoute'
 
 export default function App() {
   return (
-    <div>
-      <Mainlayout/>
-    </div>
+    <>
+      <AuthRoute/>
+    </>
   )
 }
